@@ -1,3 +1,5 @@
+import os
+
 import pandas as pd
 
 
@@ -33,34 +35,34 @@ def excel_print2(excelAdd, row_num):
            'data': data}
     return sum
 
+
 def excel_new(date):
     nan_excel = pd.DataFrame()
-    new_name = f'银行余额表{date}'
+    new_name = f'银行余额表汇总{date}'
     # nan_excel.to_excel(new_name)
     # writer = pd.ExcelWriter(f'银行余额表{date}')
     # writer.save()
     # writer.close()
 
 
-# def excel_write(find_date, sum):
-#     nan_excel = pd.DataFrame()
-#     nan_excel.to_excel(f'银行余额表{find_date}')
-#     writer = pd.ExcelWriter(f'银行余额表{find_date}')
-#     writer.save()
-#     writer.close()
-
-
-def excel_dos(find_date, excelname_date, names):
-    # excel_new(find_date)
+def excel_dos(find_date, excelname_date, path):
+    file_list = os.listdir(path)
+    file_list.sort()
+    fileNum = len(file_list)
     row_num = excel_find_row(find_date)
-    for name in names:
-        # print(f'正在读取：{name}-2022年银行日记账{date}.xlsx')
-        excelAdd = f'银行余额自动更新测试/{name}-2022年银行日记账{excelname_date}.xlsx'
+    print("在该目录下有%d个xlsx文件，只合并含记账日期的文件" % fileNum)
+
+    for file in file_list:
+        if '~$' not in file and excelname_date in file:  # 打开的文件和不含日期的文件均不在处理之列
+            excelAdd = os.path.join(path, file)
+        else:
+            continue
         excel_print(excelAdd, row_num)
 
 
 if __name__ == '__main__':
-    find_date = '2022.5.6'
-    excelname_date = '2022.5.10'
-    names = ['（焦剑利）万圣', '（张晨光）坤宜', '（周莹莹）聚英']
-    excel_dos(find_date, excelname_date, names)
+    # find_date = '2022.5.6'  # 需要计算的日期
+    excelname_date = '2022.5.10'  # excel文件名上的日期
+    find_date = excelname_date
+    path = '银行余额自动更新测试/'
+    excel_dos(find_date, excelname_date, path)

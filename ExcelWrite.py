@@ -3,7 +3,7 @@ import pandas as pd
 
 
 def excel_dos(excelname_date):
-    path = '/Users/zhaotong/Desktop/code/银行余额自动更新测试'
+    path = '银行余额自动更新测试/'
     file_list = os.listdir(path)
     file_list.sort()
     fileNum = len(file_list)
@@ -17,10 +17,10 @@ def excel_dos(excelname_date):
             else:
                 continue
 
-            demo_df = pd.read_excel(file_name)
-            df1 = pd.DataFrame(demo_df)
-            sheet_name = file_name[40:58]
-            df1.to_excel(writer, sheet_name=sheet_name)
+            old_df = pd.read_excel(file_name)
+            df = pd.DataFrame(old_df)
+            sheet_name = file_name[11: len(file_name) - len(excelname_date) -16]
+            df.to_excel(writer, sheet_name)
 
             print('正在合并第%d个文件 ' % truefileNum)
             print('已完成 ' + file_name)

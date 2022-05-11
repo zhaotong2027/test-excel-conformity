@@ -12,11 +12,13 @@
 在terminal执行： pip install package_name --no-cache-dir
 
 
+
 ***2.确保excel文件夹的位置和名称正确***
 
-excel文件夹位置：code文件夹下
+excel文件夹位置：test-excel-conformity 文件夹下（生成的excel也在这个文件夹下）
 
 excel文件夹名称：'银行余额自动更新测试/{name}-2022年银行日记账{date}.xlsx'
+
 
 
 ***3.文件及作用***
