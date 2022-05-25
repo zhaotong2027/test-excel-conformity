@@ -3,11 +3,11 @@ import os
 import pandas as pd
 
 
-def excel_find_row(date):
+def excel_find_row(date, path):
     dates = date.split('.')
     month = dates[1]
     day = dates[2]
-    demo_df = pd.read_excel(f'银行余额自动更新测试/（周莹莹）聚英-2022年银行日记账2022.5.10.xlsx')
+    demo_df = pd.read_excel(f'{path}/（周莹莹）聚英-2022年银行日记账2022.5.10.xlsx')
     for indexs in demo_df.index:
         for i in range(len(demo_df.loc[indexs].values)):
             if (str(demo_df.loc[indexs].values[i]) == month and str(demo_df.loc[indexs].values[i + 1]) == day):
@@ -49,7 +49,7 @@ def excel_dos(find_date, excelname_date, path):
     file_list = os.listdir(path)
     file_list.sort()
     fileNum = len(file_list)
-    row_num = excel_find_row(find_date)
+    row_num = excel_find_row(find_date, path)
     print("在该目录下有%d个xlsx文件，只合并含记账日期的文件" % fileNum)
 
     for file in file_list:
@@ -61,8 +61,8 @@ def excel_dos(find_date, excelname_date, path):
 
 
 if __name__ == '__main__':
-    # find_date = '2022.5.6'  # 需要计算的日期
+    find_date = '2022.5.6'  # 需要计算的日期
     excelname_date = '2022.5.10'  # excel文件名上的日期
-    find_date = excelname_date
-    path = '银行余额自动更新测试/'
+    # find_date = excelname_date
+    path = 'linlin/银行余额自动更新测试/'
     excel_dos(find_date, excelname_date, path)

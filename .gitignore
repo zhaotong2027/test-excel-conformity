@@ -128,7 +128,7 @@ dmypy.json
 # Pyre type checker
 .pyre/
 
-/银行余额自动更新测试
+/linlin/银行余额自动更新测试
 银行余额表*.xlsx
 ~$银行余额表*.xlsx
 

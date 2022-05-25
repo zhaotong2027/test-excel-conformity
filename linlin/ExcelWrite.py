@@ -3,7 +3,7 @@ import pandas as pd
 
 
 def excel_dos(excelname_date):
-    path = '银行余额自动更新测试/'
+    path = 'linlin/银行余额自动更新测试/' # 修改path
     file_list = os.listdir(path)
     file_list.sort()
     fileNum = len(file_list)
@@ -19,7 +19,7 @@ def excel_dos(excelname_date):
 
             old_df = pd.read_excel(file_name)
             df = pd.DataFrame(old_df)
-            sheet_name = file_name[11: len(file_name) - len(excelname_date) -16]
+            sheet_name = file_name[18: len(file_name) - len(excelname_date) -16]
             df.to_excel(writer, sheet_name)
 
             print('正在合并第%d个文件 ' % truefileNum)
