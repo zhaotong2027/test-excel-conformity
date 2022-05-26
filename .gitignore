@@ -128,8 +128,16 @@ dmypy.json
 # Pyre type checker
 .pyre/
 
+.idea
+
+# linlin
 /linlin/银行余额自动更新测试
 银行余额表*.xlsx
 ~$银行余额表*.xlsx
 
-.idea
+# lihong
+/lihong/screenshot/
+/lihong/销售项目*.xlsx
+/lihong/~$销售项目*.xlsx
+/lihong/销售项目*.xls
+/lihong/~$销售项目*.xls
