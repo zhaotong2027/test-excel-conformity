@@ -137,7 +137,7 @@ dmypy.json
 
 # lihong
 /lihong/screenshot/
-/lihong/销售项目*.xlsx
-/lihong/~$销售项目*.xlsx
-/lihong/销售项目*.xls
-/lihong/~$销售项目*.xls
+/lihong/*.xlsx
+/lihong/~$*.xlsx
+/lihong/*.xls
+/lihong/~$*.xls
