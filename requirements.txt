@@ -4,3 +4,6 @@ xlrd == 1.2.0
 xlsxwriter
 pyautogui
 Pillow
+baidu-aip
+chardet
+pytesseract
