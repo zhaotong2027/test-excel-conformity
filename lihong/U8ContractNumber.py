@@ -23,28 +23,28 @@ import pyautogui
 import pandas as pd
 
 isScreenShot = True
+
+
 # print(f'isScreenShot：{isScreenShot}')
 
 # 运行逻辑
 def autoGuiOnce(num, name):
-    # print(f'屏幕尺寸：{pyautogui.size()}')
-    # print(f'当前鼠标位置： {pyautogui.position()}')
-
-    # 1、点击"增加按钮"（增加按钮的像素-,-）
-    addButtonPos = (144, 181)
+    # 1、点击"增加按钮"（增加按钮的像素287,85）
+    addButtonPos = (287, 85)
     pyautogui.moveTo(addButtonPos)
     pyautogui.leftClick(addButtonPos)
     pyautogui.doubleClick(addButtonPos)
 
-    # 2、在像素（-,-）位置添加"项目编号"
-    numButtonPos = (491, 453)
+    # 2、在像素（466,928）位置添加"项目编号"
+    numButtonPos = (466, 928)
     pyautogui.moveTo(numButtonPos)
     pyautogui.leftClick(numButtonPos)
     pyautogui.typewrite(num)
     pyautogui.hotkey('enter')
 
-    # 3、在像素（-,-）位置添加"项目名称"
-    nameButtonPos = (491, 453)
+    # 3、在像素（634,928）位置添加"项目名称"
+    nameButtonPos = (634, 928)
+    pyautogui.moveTo(nameButtonPos)
     pyautogui.leftClick(nameButtonPos)
     pyautogui.typewrite(name)
     pyautogui.hotkey('enter')
@@ -53,8 +53,6 @@ def autoGuiOnce(num, name):
     if isScreenShot:
         im = pyautogui.screenshot(region=(0, 0, 1480, 1000))
         im.save(fr'screenshot/{num}-{name}.png')
-    pyautogui.hotkey('ctrl', 'a')
-    pyautogui.hotkey('delete')
     pyautogui.leftClick((1380, 885))
 
 
@@ -101,6 +99,9 @@ def getStartNumByXiaoShou(xiaoShouPath):
 
 
 if __name__ == '__main__':
+    print(f'屏幕尺寸：{pyautogui.size()}')
+    print(f'当前鼠标位置： {pyautogui.position()}')
+
     # pyautogui.PAUSE = 1  # 每个步骤延迟一秒执行
     nameStart = 'XSZS'  # 支持：'XSZS'、'YP'、'KJ'等
     gongShiPath = '工时记录-2022年4月份 - To 雅楠.xlsx'
@@ -114,3 +115,4 @@ if __name__ == '__main__':
     names = getNamesByPathAndStartStr(gongShiPath, xiaoShouPath, nameStart)
     print(f'获取项目名称成功，项目名称集合为：{names}')
     iterateName(startNum, names)
+    print(f'已完成录入，请校验')

@@ -136,7 +136,7 @@ dmypy.json
 ~$银行余额表*.xlsx
 
 # lihong
-/lihong/screenshot/
+#/lihong/screenshot/
 /lihong/*.xlsx
 /lihong/~$*.xlsx
 /lihong/*.xls
