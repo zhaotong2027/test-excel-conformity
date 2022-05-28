@@ -66,8 +66,8 @@ def iterateName(startNum, names):
     if (len(names) != 0):
         for name in names:
             autoGuiOnce(str(num), name)
-            doneCount = len(names) - remainCount
             remainCount -= 1
+            doneCount = len(names) - remainCount
             print(f'数据{num}-{name}已完成录入，共录入{doneCount}个，还有{remainCount}个待录入；')
             num += 1
 
