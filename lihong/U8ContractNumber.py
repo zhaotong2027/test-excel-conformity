@@ -53,15 +53,22 @@ def autoGuiOnce(num, name):
     if isScreenShot:
         im = pyautogui.screenshot(region=(0, 0, 1480, 1000))
         im.save(fr'screenshot/{num}-{name}.png')
-    pyautogui.leftClick((1380, 885))
+    pyautogui.leftClick((1380, 900))
 
 
 # 匹配 项目编号 和 项目名称
 def iterateName(startNum, names):
+    print('===========数据整理完成，准备录入===========')
+    print('===========数据整理完成，准备录入===========')
+    print('===========数据整理完成，准备录入===========')
     num = int(startNum)
+    remainCount = len(names)
     if (len(names) != 0):
         for name in names:
             autoGuiOnce(str(num), name)
+            doneCount = len(names) - remainCount
+            remainCount -= 1
+            print(f'数据{num}-{name}已完成录入，共录入{doneCount}个，还有{remainCount}个待录入；')
             num += 1
 
 
@@ -115,4 +122,6 @@ if __name__ == '__main__':
     names = getNamesByPathAndStartStr(gongShiPath, xiaoShouPath, nameStart)
     print(f'获取项目名称成功，项目名称集合为：{names}')
     iterateName(startNum, names)
-    print(f'已完成录入，请校验')
+    print('===========已完成，请校验===========')
+    print('===========已完成，请校验===========')
+    print('===========已完成，请校验===========')
