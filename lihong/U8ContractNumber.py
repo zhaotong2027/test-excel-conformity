@@ -29,7 +29,7 @@ isScreenShot = True
 # print(f'isScreenShot：{isScreenShot}')
 
 # 运行逻辑
-def autoGuiOnce(num, name):
+def insertNumAndName(num, name):
     # 1、点击"增加按钮"（增加按钮的像素287,85）
     addButtonPos = (287, 85)
     pyautogui.moveTo(addButtonPos)
@@ -67,7 +67,7 @@ def iterateName(startNum, names):
     remainCount = len(names)
     if (len(names) != 0):
         for name in names:
-            autoGuiOnce(str(num), name)
+            insertNumAndName(str(num), name)
             remainCount -= 1
             doneCount = len(names) - remainCount
             print(f'数据{num}-{name}已完成录入，共录入{doneCount}个，还有{remainCount}个待录入；')
@@ -75,7 +75,7 @@ def iterateName(startNum, names):
 
 
 # b、获取待输入的项目名称(name)
-def getNamesByPathAndStartStr(gongShiPath, xiaoShouPath, nameStart):
+def selectNamesByPathAndStartStr(gongShiPath, xiaoShouPath, nameStart):
     # i、获取 工时记录表的f列(销售合同编号) 和 销售项目表d列(项目名称)
     gongShiExcel = pd.read_excel(gongShiPath, usecols="f")
     xiaoShouExcel = pd.read_excel(xiaoShouPath, usecols="d")
@@ -96,7 +96,7 @@ def getNamesByPathAndStartStr(gongShiPath, xiaoShouPath, nameStart):
 
 
 # a、获取起始编号(startNum)
-def getStartNumByXiaoShou(xiaoShouPath):
+def selectStartNumByXiaoShou(xiaoShouPath):
     # i、获取 销售项目表c列(项目编号)
     xiaoShouExcel = pd.read_excel(xiaoShouPath, usecols="c")
     nums = set(xiaoShouExcel['项目编号'])
@@ -119,9 +119,9 @@ if __name__ == '__main__':
     # isScreenShot = False  # 是否打开屏幕截图，支持：True、False，默认开启
     # print(f'isScreenShot-main：{isScreenShot}')
 
-    startNum = getStartNumByXiaoShou(xiaoShouPath)
+    startNum = selectStartNumByXiaoShou(xiaoShouPath)
     print(f'获取项目编号成功，起始项目编号为:{startNum}')
-    names = getNamesByPathAndStartStr(gongShiPath, xiaoShouPath, nameStart)
+    names = selectNamesByPathAndStartStr(gongShiPath, xiaoShouPath, nameStart)
     print(f'获取项目名称成功，项目名称集合为：{names}')
     iterateName(startNum, names)
     print('===========已完成，请校验===========')
