@@ -21,6 +21,7 @@ c、默认屏幕截图功能开启
 
 import pyautogui
 import pandas as pd
+import time
 
 isScreenShot = True
 
@@ -51,6 +52,7 @@ def autoGuiOnce(num, name):
 
     # 4、点击空白处
     if isScreenShot:
+        time.sleep(1)
         im = pyautogui.screenshot(region=(0, 0, 1480, 1000))
         im.save(fr'screenshot/{num}-{name}.png')
     pyautogui.leftClick((1380, 900))
