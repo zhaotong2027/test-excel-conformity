@@ -72,6 +72,9 @@ def iterateName(startNum, names):
             doneCount = len(names) - remainCount
             print(f'数据{num}-{name}已完成录入，共录入{doneCount}个，还有{remainCount}个待录入；')
             num += 1
+    print('===========已完成，请校验===========')
+    print('===========已完成，请校验===========')
+    print('===========已完成，请校验===========')
 
 
 # b、获取待输入的项目名称(name)
@@ -124,6 +127,3 @@ if __name__ == '__main__':
     names = selectNamesByPathAndStartStr(gongShiPath, xiaoShouPath, nameStart)
     print(f'获取项目名称成功，项目名称集合为：{names}')
     iterateName(startNum, names)
-    print('===========已完成，请校验===========')
-    print('===========已完成，请校验===========')
-    print('===========已完成，请校验===========')
