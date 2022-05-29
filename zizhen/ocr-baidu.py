@@ -12,9 +12,9 @@ def get_file_content(filePath):
 
 
 if __name__ == '__main__':
-    APP_ID = '26324468'
-    API_KEY = 'llLZKZf6USNIcbAKRZLPL6Lr'
-    SECRET_KEY = 'aEdNlnPKaqlvhzFBVgkPUZex2rVneW2Y'
+    APP_ID = '***'
+    API_KEY = '***'
+    SECRET_KEY = '***'
     client = AipOcr(APP_ID, API_KEY, SECRET_KEY)
 
     path = 'test-ocr.jpeg'
