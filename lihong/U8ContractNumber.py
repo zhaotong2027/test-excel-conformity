@@ -55,7 +55,7 @@ def insertNumAndName(num, name):
     # 4、点击空白处
     if isScreenShot:
         time.sleep(1)
-        im = pyautogui.screenshot(region=(0, 0, 1480, 1000))
+        im = pyautogui.screenshot()
         im.save(fr'screenshot/{num}-{name}.png')
     pyautogui.leftClick((1380, 900))
 
