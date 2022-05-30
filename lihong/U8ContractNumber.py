@@ -121,8 +121,7 @@ if __name__ == '__main__':
     gongShiPath = '工时记录-2022年5月份 - To 雅楠.xlsx'  # f列标题务必为"销售合同编号"
     xiaoShouPath = '销售项目-销售合同号.xlsx'  # d列标题务必为"项目名称"
 
-    # isScreenShot = False  # 是否打开屏幕截图，支持：True、False，默认开启
-    # print(f'isScreenShot-main：{isScreenShot}')
+    isScreenShot = False  # 是否打开屏幕截图，支持：True、False，默认开启
 
     startNum = selectStartNumByXiaoShou(xiaoShouPath)
     print(f'获取项目编号成功，起始项目编号为:{startNum}')
