@@ -56,7 +56,7 @@ def insertNumAndName(num, name):
         im = pyautogui.screenshot(region=(0, 0, 1480, 1000))
         im.save(fr'screenshot/{num}-{name}.png')
     pyautogui.leftClick((1380, 900))
-    pyautogui.leftClick((1380, 900))  # 防止中文输入，点不到空白处
+    pyautogui.hotkey('enter')  # 防止中文输入，点不到空白处
 
 
 # 匹配 项目编号 和 项目名称
