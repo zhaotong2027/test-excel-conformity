@@ -41,6 +41,7 @@ def insertNumAndName(num, name):
     pyautogui.moveTo(numButtonPos)
     pyautogui.leftClick(numButtonPos)
     pyautogui.typewrite(num)
+    time.sleep(1)
     pyautogui.hotkey('enter')
 
     # 3、在像素（634,928）位置添加"项目名称"
@@ -48,6 +49,7 @@ def insertNumAndName(num, name):
     pyautogui.moveTo(nameButtonPos)
     pyautogui.leftClick(nameButtonPos)
     pyautogui.typewrite(name)
+    time.sleep(1)
     pyautogui.hotkey('enter')
 
     # 4、点击空白处
@@ -117,7 +119,7 @@ if __name__ == '__main__':
 
     # pyautogui.PAUSE = 1  # 每个步骤延迟一秒执行
     nameStart = 'XSZS'  # 支持：'XSZS'、'YP'、'KJ'等
-    gongShiPath = '工时记录-2022年4月份 - To 雅楠.xlsx'
+    gongShiPath = '工时记录-2022年5月份 - To 雅楠.xlsx'
     xiaoShouPath = '销售项目-销售合同号.xlsx'
 
     # isScreenShot = False  # 是否打开屏幕截图，支持：True、False，默认开启
