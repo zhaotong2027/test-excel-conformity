@@ -58,7 +58,6 @@ def insertNumAndName(num, name):
         im = pyautogui.screenshot(region=(0, 0, 1480, 1000))
         im.save(fr'screenshot/{num}-{name}.png')
     pyautogui.leftClick((1380, 900))
-    pyautogui.hotkey('enter')  # 防止中文输入，点不到空白处
 
 
 # 匹配 项目编号 和 项目名称
@@ -119,8 +118,8 @@ if __name__ == '__main__':
 
     # pyautogui.PAUSE = 1  # 每个步骤延迟一秒执行
     nameStart = 'XSZS'  # 支持：'XSZS'、'YP'、'KJ'等
-    gongShiPath = '工时记录-2022年4月份 - To 雅楠.xlsx'
-    xiaoShouPath = '销售项目-销售合同号.xlsx'
+    gongShiPath = '工时记录-2022年5月份 - To 雅楠.xlsx'  # f列标题务必为"销售合同编号"
+    xiaoShouPath = '销售项目-销售合同号.xlsx'  # d列标题务必为"项目名称"
 
     # isScreenShot = False  # 是否打开屏幕截图，支持：True、False，默认开启
     # print(f'isScreenShot-main：{isScreenShot}')
@@ -130,3 +129,4 @@ if __name__ == '__main__':
     names = selectNamesByPathAndStartStr(gongShiPath, xiaoShouPath, nameStart)
     print(f'获取项目名称成功，项目名称集合为：{names}')
     iterateName(startNum, names)
+    print(f'项目编号项目名称已录入完成，可根据控制台打印数据与U8一一核对校验')
