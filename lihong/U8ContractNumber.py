@@ -22,11 +22,10 @@ c、默认屏幕截图功能开启
 import pyautogui
 import pandas as pd
 import time
+import pyperclip
 
 isScreenShot = True
 
-
-# print(f'isScreenShot：{isScreenShot}')
 
 # 运行逻辑
 def insertNumAndName(num, name):
@@ -40,6 +39,8 @@ def insertNumAndName(num, name):
     numButtonPos = (466, 928)
     pyautogui.moveTo(numButtonPos)
     pyautogui.leftClick(numButtonPos)
+    # pyperclip.copy(num)
+    # pyautogui.hotkey('ctrl', 'v')  # mac系统ctrl需改成command
     pyautogui.typewrite(num)
     time.sleep(1)
     pyautogui.hotkey('enter')
@@ -48,6 +49,8 @@ def insertNumAndName(num, name):
     nameButtonPos = (634, 928)
     pyautogui.moveTo(nameButtonPos)
     pyautogui.leftClick(nameButtonPos)
+    # pyperclip.copy(name)
+    # pyautogui.hotkey('ctrl', 'v')  # mac系统ctrl需改成command
     pyautogui.typewrite(name)
     time.sleep(1)
     pyautogui.hotkey('enter')
