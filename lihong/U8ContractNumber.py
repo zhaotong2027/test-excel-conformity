@@ -24,18 +24,19 @@ import pandas as pd
 import time
 
 isScreenShot = True
+addButtonPos = (287, 85)
+numButtonPos = (466, 928)
+nameButtonPos = (634, 928)
 
 
 # 运行逻辑
 def insertNumAndName(num, name):
     # 1、点击"增加按钮"（增加按钮的像素287,85）
-    addButtonPos = (287, 85)
     pyautogui.moveTo(addButtonPos)
     pyautogui.leftClick(addButtonPos)
     pyautogui.doubleClick(addButtonPos)
 
     # 2、在像素（466,928）位置添加"项目编号"
-    numButtonPos = (466, 928)
     pyautogui.moveTo(numButtonPos)
     pyautogui.leftClick(numButtonPos)
     # pyperclip.copy(num)
@@ -45,7 +46,6 @@ def insertNumAndName(num, name):
     pyautogui.hotkey('enter')
 
     # 3、在像素（634,928）位置添加"项目名称"
-    nameButtonPos = (634, 928)
     pyautogui.moveTo(nameButtonPos)
     pyautogui.leftClick(nameButtonPos)
     # pyperclip.copy(name)
@@ -117,12 +117,12 @@ def selectStartNumByXiaoShou(xiaoShouPath):
 '''
 windows系统窗口移动快捷键 windows+左 windows+右
 注释快捷键 ctrl+/
-运行快捷键 鼠标点击一下run的打印窗口（就是打印出屏幕尺寸的窗口） ctrl+r 
+运行快捷键 鼠标点击一下run的打印窗口（就是打印出屏幕尺寸的窗口） ctrl+F5 
 
 【【【测屏幕尺寸过程】】】
 1、把程序放到要测的屏幕下
 2、130行以后的功能注释掉
-3、鼠标点击run的打印窗口后，把鼠标放到要测的位置，ctrl+r 快捷键运行
+3、鼠标点击【run的打印窗口（窗口中任意位置）】后，把鼠标移动到要测的位置（这一步不要点击），ctrl+r 快捷键运行
 '''
 if __name__ == '__main__':
     print(f'屏幕尺寸：{pyautogui.size()}')
@@ -139,5 +139,9 @@ if __name__ == '__main__':
     print(f'获取项目编号成功，起始项目编号为:{startNum}')
     names = selectNamesByPathAndStartStr(gongShiPath, xiaoShouPath, nameStart)
     print(f'获取项目名称成功，项目名称集合为：{names}')
+
+    addButtonPos = (287, 85)  # 增加按键位置，默认 (287, 85)
+    numButtonPos = (466, 928)  # 项目编号位置，默认 (466, 928)
+    nameButtonPos = (634, 928)  # 项目名称位置，默认 (634, 928)
     iterateName(startNum, names)
     print(f'项目编号项目名称已录入完成，可根据控制台打印数据与U8一一核对校验')
