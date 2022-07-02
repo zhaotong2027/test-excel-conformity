@@ -115,6 +115,7 @@ def selectStartNumByXiaoShou(xiaoShouPath):
 
 
 '''
+windows系统窗口移动快捷键 windows+左 windows+右
 注释快捷键 ctrl+/
 运行快捷键 鼠标点击一下run的打印窗口（就是打印出屏幕尺寸的窗口） ctrl+r 
 
