@@ -123,12 +123,17 @@ windows系统窗口移动快捷键 windows+左 windows+右
 
 【【【测屏幕尺寸过程】】】
 1、把程序放到要测的屏幕下
-2、130行以后的功能注释掉
+2、138行以后的功能注释掉
 3、鼠标点击【run的打印窗口（窗口中任意位置）】后，把鼠标移动到要测的位置（这一步不要点击），ctrl+F5 快捷键运行
+
+务必保持输入法为英文！
+务必保持输入法为英文！
+务必保持输入法为英文！
 '''
 if __name__ == '__main__':
     print(f'屏幕尺寸：{pyautogui.size()}')
     print(f'当前鼠标位置： {pyautogui.position()}')
+
 
     # pyautogui.PAUSE = 1  # 每个步骤延迟一秒执行
     nameStart = 'XSZS'  # 支持：'XSZS'、'YP'、'KJ'等
