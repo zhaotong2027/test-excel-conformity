@@ -27,6 +27,7 @@ isScreenShot = True
 addButtonPos = (287, 85)
 numButtonPos = (466, 928)
 nameButtonPos = (634, 928)
+clickBlankPos = (1380, 900)
 
 
 # 运行逻辑
@@ -59,7 +60,7 @@ def insertNumAndName(num, name):
         time.sleep(1)
         im = pyautogui.screenshot()
         im.save(fr'screenshot/{num}-{name}.png')
-    pyautogui.leftClick((1380, 900))
+    pyautogui.leftClick(clickBlankPos)
 
 
 # 匹配 项目编号 和 项目名称
@@ -144,5 +145,6 @@ if __name__ == '__main__':
     addButtonPos = (287, 85)  # 增加按键位置，默认 (287, 85)
     numButtonPos = (466, 928)  # 项目编号位置，默认 (466, 928)
     nameButtonPos = (634, 928)  # 项目名称位置，默认 (634, 928)
+    clickBlankPos = (1380, 900)  # 点击U8空白处，默认 (1380, 900)
     iterateName(startNum, names)
     print(f'项目编号项目名称已录入完成，可根据控制台打印数据与U8一一核对校验')
