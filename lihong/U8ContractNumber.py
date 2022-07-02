@@ -118,11 +118,12 @@ def selectStartNumByXiaoShou(xiaoShouPath):
 windows系统窗口移动快捷键 windows+左 windows+右
 注释快捷键 ctrl+/
 运行快捷键 鼠标点击一下run的打印窗口（就是打印出屏幕尺寸的窗口） ctrl+F5 
+运行过程中强制结束快捷键 ctrl+F2
 
 【【【测屏幕尺寸过程】】】
 1、把程序放到要测的屏幕下
 2、130行以后的功能注释掉
-3、鼠标点击【run的打印窗口（窗口中任意位置）】后，把鼠标移动到要测的位置（这一步不要点击），ctrl+r 快捷键运行
+3、鼠标点击【run的打印窗口（窗口中任意位置）】后，把鼠标移动到要测的位置（这一步不要点击），ctrl+F5 快捷键运行
 '''
 if __name__ == '__main__':
     print(f'屏幕尺寸：{pyautogui.size()}')
