@@ -22,7 +22,6 @@ c、默认屏幕截图功能开启
 import pyautogui
 import pandas as pd
 import time
-import pyperclip
 
 isScreenShot = True
 
@@ -115,6 +114,15 @@ def selectStartNumByXiaoShou(xiaoShouPath):
     return str(startNum)
 
 
+'''
+注释快捷键 ctrl+/
+运行快捷键 鼠标点击一下run的打印窗口（就是打印出屏幕尺寸的窗口） ctrl+r 
+
+【【【测屏幕尺寸过程】】】
+1、把程序放到要测的屏幕下
+2、130行以后的功能注释掉
+3、鼠标点击run的打印窗口后，把鼠标放到要测的位置，ctrl+r 快捷键运行
+'''
 if __name__ == '__main__':
     print(f'屏幕尺寸：{pyautogui.size()}')
     print(f'当前鼠标位置： {pyautogui.position()}')
