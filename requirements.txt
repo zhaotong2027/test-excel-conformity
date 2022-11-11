@@ -8,3 +8,9 @@ Pillow
 baidu-aip
 chardet
 pytesseract
+python-docx
+pyinstaller
+PySide2
+selenium == 4.6.0
+selenium-wire
+pyOpenSSL = 22.0.0
